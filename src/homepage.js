@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Nav from './components/nav.js'
+import Board from './components/board.js';
+import Nav from './components/nav.js';
 
 function Homepage() {
   return (
@@ -8,7 +9,7 @@ function Homepage() {
       <nav>
         <Nav />
       </nav>
-      I'm the homepage!
+      <Board />
     </div>
   );
 }
