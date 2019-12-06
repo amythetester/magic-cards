@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import Card from './card.js';
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -16,17 +17,27 @@ class Board extends Component {
   getInitialCards = () => {
     const mtg = require('mtgsdk')
 
-    mtg.card.where({ types: 'creature'})
+    mtg.card.where({ types: 'creature', orderBy: 'name', pageSize: 20 })
     .then(cards => {
-      this.setState = ({cards: cards})
-      console.log(cards) 
+      this.setState({cards: cards});
     })
+  }
+
+  renderCards = () => {
+    if (this.state.cards) {
+      const cards = this.state.cards.map(card => 
+        <Card 
+          key={card.id}
+          name={card.name} 
+        />);
+      return cards; 
+    }
   }
 
   render() {
     return (
       <div className="Board">
-        Magical Beasts and Where to Find Them
+        {this.renderCards()}
       </div>
     );
   }
