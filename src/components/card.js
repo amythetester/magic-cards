@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './card.css'
+
 function Card(props) {
   return (
     <div className="card">

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import Card from './card.js';
+
+import './board.css'
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +42,7 @@ class Board extends Component {
 
   render() {
     return (
-      <div className="Board">
+      <div className="board">
         {this.renderCards()}
       </div>
     );
