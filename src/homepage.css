@@ -20,4 +20,9 @@
     padding: 50px;
     background:rgba(0,0,0,0.5);
     border-radius: 0.25rem;
-  }
+}
+
+.barrier {
+    background-color: #171008;
+    min-height: 2rem;
+}
