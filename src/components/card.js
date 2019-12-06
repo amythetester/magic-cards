@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Card(props) {
   return (
@@ -13,5 +14,14 @@ function Card(props) {
     </div>
   );
 }
+
+Card.propTypes = {
+  key: PropTypes.number,
+  image: PropTypes.string,
+  name: PropTypes.string,
+  artist: PropTypes.string,
+  set: PropTypes.string,
+  type: PropTypes.string
+};
 
 export default Card;
