@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <nav className="navbar sticky-top navbar-light bg-light">
+    <nav className="navbar sticky-top navbar-dark bg-dark">
       <Link to="/" className="navbar-brand">Magical Creatures</Link>
-      <Link to={goToTop}>Back to Top</Link>
+      <Link to={goToTop} className="nav-link">Back to Top</Link>
     </nav>
   );
 }
