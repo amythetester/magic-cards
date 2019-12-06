@@ -27,7 +27,7 @@ class Board extends Component {
     if (this.state.cards) {
       const cards = this.state.cards.map(card => 
         <Card 
-          key={card.id}
+          key={card.multiverseid}
           name={card.name} 
           image={card.imageUrl}
           artist={card.artist}
