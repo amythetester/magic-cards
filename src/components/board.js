@@ -3,7 +3,7 @@ import React from 'react';
 function Board() {
   return (
     <div className="Board">
-      I'm the board!
+      Magical Beasts and Where to Find Them
     </div>
   );
 }
