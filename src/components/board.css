@@ -1,7 +1,10 @@
 .board {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 
   background-image: url('../images/forest-creature.jpg');
   background-position: center center;
+
+  padding: 0 5rem 0 5rem;
 }
