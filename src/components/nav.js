@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 function Nav() {
   return (
-    <div className="Nav">
+    <nav className="navbar navbar-dark bg-dark">
       <Link to="/" className="navbar-brand">Magical Creatures</Link>
-    </div>
+    </nav>
   );
 }
 

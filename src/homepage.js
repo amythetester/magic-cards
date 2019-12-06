@@ -12,7 +12,7 @@ function Homepage() {
       <section className="hero">
         <div className="transparent">
           <h1>Magical Beasts and Where to Find Them</h1>
-          <h3>Scroll to find more.</h3>
+          <h3>Scroll to see what's out there.</h3>
         </div>
       </section>
       <Board />
