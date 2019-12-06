@@ -8,7 +8,8 @@ class Board extends Component {
     super(props);
 
     this.state = {
-      cards: []
+      cards: [],
+      nextCard: 20
     };
   }
 
@@ -22,6 +23,17 @@ class Board extends Component {
     mtg.card.where({ types: 'creature', orderBy: 'name', pageSize: 20 })
     .then(cards => {
       this.setState({cards: cards});
+    })
+  }
+
+  getMoreCards = () => {
+    const mtg = require('mtgsdk')
+
+    mtg.card.where({ types: 'creature', orderBy: 'name', pageSize: 50 })
+    .then(cards => {
+      const newCards = this.state.cards.push(cards);
+      const nextCardNeeded = this.state.nextCard + 50
+      this.setState({cards: newCards, nextCard: nextCardNeeded});
     })
   }
 

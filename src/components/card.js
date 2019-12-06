@@ -5,7 +5,7 @@ import './card.css'
 
 function Card(props) {
   return (
-    <div className="card">
+    <div className="card cardFadeIn">
       <section className="card__content">
         {props.image && <img src={props.image} alt="creature card" className="card__content-image"/>}
         {props.name && <div className="card__content-name">Name: {props.name}</div>}

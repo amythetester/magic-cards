@@ -29,6 +29,19 @@
   text-align: center;
   font-weight: 100;
   overflow: hidden;
-  }
-  
+}
 
+.cardFadeIn {
+  -webkit-animation: cardFadeIn 4s ease 1 alternate; 
+  animation: cardFadeIn 4s ease 1 alternate;
+}
+
+@keyframes cardFadeIn {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+@-webkit-keyframes cardFadeIn {
+from {opacity: 0;}
+to {opacity: 1;}
+}  
