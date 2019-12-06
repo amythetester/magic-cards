@@ -1,9 +1,14 @@
 import React from 'react';
 
-function Card() {
+function Card(props) {
   return (
     <div className="Card">
-      I'm a card!
+      {props.image}
+      {props.name}
+      {props.artist}
+      {props.set}
+      {props.type}
+
     </div>
   );
 }

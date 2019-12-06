@@ -29,6 +29,10 @@ class Board extends Component {
         <Card 
           key={card.id}
           name={card.name} 
+          image={card.imageUrl}
+          artist={card.artist}
+          set={card.setName}
+          type={card.originalType}
         />);
       return cards; 
     }
