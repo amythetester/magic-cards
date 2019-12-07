@@ -45,23 +45,24 @@ class Board extends Component {
 
     const cards = [];
     this.state.cards.map((card, i) => {
-        cards.push(
-          <Card 
-            key={i}
-            name={card.name} 
-            image={card.imageUrl}
-            artist={card.artist}
-            set={card.setName}
-            type={card.originalType}
-          />
-        );
+      cards.push(
+        <Card 
+          key={i}
+          name={card.name} 
+          image={card.imageUrl}
+          artist={card.artist}
+          set={card.setName}
+          type={card.originalType}
+        />
+      );
+      return cards
     });
 
     return (
       <div className="background">
         <div className="barrier"> </div>
         <InfiniteScroll
-          className="board"
+          id="board"
           pageStart={0}
           loadMore={this.loadCards.bind(this)}
           hasMore={this.state.hasMoreCards}
