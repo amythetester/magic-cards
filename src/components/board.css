@@ -1,0 +1,16 @@
+.background {
+  background-image: url('../images/forest-creature.jpg');
+  background-position: center center;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 5rem 0 5rem;
+}
+
+.barrier {
+  background-color: #171008;
+  min-height: 2rem;
+}
