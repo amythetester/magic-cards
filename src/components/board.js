@@ -60,18 +60,16 @@ class Board extends Component {
     return (
       <div className="background">
         <div className="barrier"> </div>
-        <section className="board">
-          <InfiniteScroll
-            pageStart={0}
-            loadMore={this.loadCards.bind(this)}
-            hasMore={this.state.hasMoreCards}
-            loader={loader}>
+        <InfiniteScroll
+          className="board"
+          pageStart={0}
+          loadMore={this.loadCards.bind(this)}
+          hasMore={this.state.hasMoreCards}
+          loader={loader}>
 
-            <div className="tracks">
-                {cards}
-            </div>
-          </InfiniteScroll>
-        </section>
+          {cards}
+
+        </InfiniteScroll>
       </div>
     );
   }
