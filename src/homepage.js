@@ -15,7 +15,6 @@ function Homepage() {
           <h3>Scroll to see what's out there.</h3>
         </div>
       </section>
-      <section className="barrier"> </section>
       <Board />
     </div>
   );

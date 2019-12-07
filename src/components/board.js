@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import Card from './card.js';
 
@@ -9,53 +10,70 @@ class Board extends Component {
 
     this.state = {
       cards: [],
-      nextCard: 20
+      hasMoreCards: true,
     };
   }
 
-  componentDidMount() {
-    this.getInitialCards();
-  }
+  loadCards(page) {
+    const mtg = require('mtgsdk');
+    const numberOfCards = 20;
+    const type = 'creature';
+    let pageNumber = 1;
+    let sortOrder = 'name';
 
-  getInitialCards = () => {
-    const mtg = require('mtgsdk')
+    mtg.card.where({ types: type, orderBy: sortOrder, pageSize: numberOfCards, page: pageNumber })
+      .then(cards => {
+        if(cards) {
+          const currentCards = this.state.cards;
+          cards.map((card) => {
+            currentCards.push(card);
+          });
 
-    mtg.card.where({ types: 'creature', orderBy: 'name', pageSize: 20 })
-    .then(cards => {
-      this.setState({cards: cards});
-    })
-  }
-
-  getMoreCards = () => {
-    const mtg = require('mtgsdk')
-
-    mtg.card.where({ types: 'creature', orderBy: 'name', pageSize: 50 })
-    .then(cards => {
-      const newCards = this.state.cards.push(cards);
-      const nextCardNeeded = this.state.nextCard + 50
-      this.setState({cards: newCards, nextCard: nextCardNeeded});
-    })
-  }
-
-  renderCards = () => {
-    if (this.state.cards) {
-      const cards = this.state.cards.map(card => 
-        <Card 
-          key={card.multiverseid}
-          name={card.name} 
-          image={card.imageUrl}
-          artist={card.artist}
-          set={card.setName}
-          type={card.originalType}
-        />);
-      return cards; 
+          if(cards) {
+            this.setState({
+              cards: currentCards,
+            });
+          } else {
+            this.setState({
+              hasMoreItems: false
+            });
+          }
+        }
+      });
     }
-  }
 
   render() {
+    const loader = <div className="loader">Loading ...</div>;
+
+    const cards = [];
+    this.state.cards.map((card, i) => {
+        cards.push(
+          <Card 
+            key={i}
+            name={card.name} 
+            image={card.imageUrl}
+            artist={card.artist}
+            set={card.setName}
+            type={card.originalType}
+          />
+        );
+    });
+
     return (
-      <div className="board">
-          {this.renderCards()}
+      <div className="background">
+        <div className="barrier"> </div>
+        <section className="board">
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={this.loadCards.bind(this)}
+            hasMore={this.state.hasMoreCards}
+            loader={loader}>
+
+            <div className="tracks">
+                {cards}
+            </div>
+          </InfiniteScroll>
+        </section>
       </div>
     );
   }

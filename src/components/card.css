@@ -1,5 +1,5 @@
 .card {  
-  padding: 1em;
+  padding: 1rem;
   margin: 1rem;
 
   min-height: 250px;
@@ -32,8 +32,8 @@
 }
 
 .cardFadeIn {
-  -webkit-animation: cardFadeIn 4s ease 1 alternate; 
-  animation: cardFadeIn 4s ease 1 alternate;
+  -webkit-animation: cardFadeIn 3s ease 1 alternate; 
+  animation: cardFadeIn 3s ease 1 alternate;
 }
 
 @keyframes cardFadeIn {
