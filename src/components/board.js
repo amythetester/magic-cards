@@ -11,6 +11,7 @@ class Board extends Component {
     this.state = {
       cards: [],
       hasMoreCards: true,
+      pageNumber: 1
     };
   }
 
@@ -18,29 +19,26 @@ class Board extends Component {
     const mtg = require('mtgsdk');
     const numberOfCards = 20;
     const type = 'creature';
-    let pageNumber = 1;
     let sortOrder = 'name';
 
-    mtg.card.where({ types: type, orderBy: sortOrder, pageSize: numberOfCards, page: pageNumber })
+    mtg.card.where({ types: type, orderBy: sortOrder, pageSize: numberOfCards, page: this.state.pageNumber })
       .then(cards => {
         if(cards) {
           const currentCards = this.state.cards;
           cards.map((card) => {
             currentCards.push(card);
           });
-
-          if(cards) {
-            this.setState({
-              cards: currentCards,
-            });
-          } else {
-            this.setState({
-              hasMoreItems: false
-            });
-          }
+          this.setState({
+            cards: currentCards,
+            pageNumber: this.state.pageNumber + 1
+          });
+        } else {
+          this.setState({
+            hasMoreItems: false
+          });
         }
       });
-    }
+  }
 
   render() {
     const loader = <div className="loader">Loading ...</div>;
