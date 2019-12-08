@@ -15,17 +15,29 @@ class Board extends Component {
     };
   }
 
-  loadCards(page) {
-    const mtg = require('mtgsdk');
-    const numberOfCards = 20;
-    const type = 'creature';
-    let sortOrder = 'name';
+  componentDidUpdate(oldProps) {
+    const newProps = this.props
+    if(oldProps !== newProps) {
+      this.setState({ cards: [], pageNumber: 1 })
+    }
+  }
 
-    mtg.card.where({ types: type, orderBy: sortOrder, pageSize: numberOfCards, page: this.state.pageNumber })
+  loadCards() {
+    const mtg = require('mtgsdk');
+    const cardsPerPage = 20;
+    const cardType = 'creature';
+
+    mtg.card.where({ 
+      types: cardType, 
+      name: this.props.nameSearch, 
+      orderBy: this.props.sortOrder, 
+      pageSize: cardsPerPage, 
+      page: this.state.pageNumber
+    })
       .then(cards => {
         if(cards) {
           const currentCards = this.state.cards;
-          cards.map((card) => {
+          cards.forEach((card) => {
             currentCards.push(card);
           });
           this.setState({
@@ -37,14 +49,17 @@ class Board extends Component {
             hasMoreItems: false
           });
         }
+      })
+      .catch(function(error) {
+        console.error(error);
       });
   }
 
   render() {
-    const loader = <div className="loader">Loading ...</div>;
+    const loader = <div className="loader" key='loaderKey'>Loading ...</div>;
 
     const cards = [];
-    this.state.cards.map((card, i) => {
+    this.state.cards.forEach((card, i) => {
       cards.push(
         <Card 
           key={i}
@@ -60,9 +75,8 @@ class Board extends Component {
 
     return (
       <div className="background">
-        <div className="barrier"> </div>
         <InfiniteScroll
-          id="board"
+          className="board"
           pageStart={0}
           loadMore={this.loadCards.bind(this)}
           hasMore={this.state.hasMoreCards}
