@@ -11,7 +11,7 @@
   }
 
 .card:hover {
-  filter: drop-shadow(0 0 1rem lightyellow);
+  filter: drop-shadow(0 0 2rem lightyellow);
   box-shadow: 0 2px 2px black;
 }
   
