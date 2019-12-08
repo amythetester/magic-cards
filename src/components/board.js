@@ -11,17 +11,13 @@ class Board extends Component {
     this.state = {
       cards: [],
       hasMoreCards: true,
-      pageNumber: 1
     };
   }
 
-  loadCards(page) {
+  loadCards() {
     const mtg = require('mtgsdk');
-    const numberOfCards = 20;
-    const type = 'creature';
-    let sortOrder = 'name';
 
-    mtg.card.where({ types: type, orderBy: sortOrder, pageSize: numberOfCards, page: this.state.pageNumber })
+    mtg.card.where({ types: this.props.cardType, name: this.props.nameSearch, orderBy: this.props.sortOrder, pageSize: this.props.cardsPerPage, page: this.props.page})
       .then(cards => {
         if(cards) {
           const currentCards = this.state.cards;
