@@ -8,7 +8,7 @@
   min-height: 2rem;
 }
 
-#board {
+.board {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

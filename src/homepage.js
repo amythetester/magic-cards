@@ -20,7 +20,8 @@ class Homepage extends Component {
     this.setState({ 
       name: newName,
       page: 1
-    })
+    });
+    console.log('AMY nameSearch', this.state.nameSearch)
   }
   
   render () {

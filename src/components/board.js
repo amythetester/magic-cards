@@ -36,6 +36,7 @@ class Board extends Component {
           const currentCards = this.state.cards;
           cards.map((card) => {
             currentCards.push(card);
+            return currentCards
           });
           this.setState({
             cards: currentCards,
@@ -47,11 +48,13 @@ class Board extends Component {
           });
         }
       })
-      .catch(alert("DID NOT WORK"))
+      .catch(function(error) {
+        console.error(error);
+      });
   }
 
   render() {
-    const loader = <div className="loader">Loading ...</div>;
+    const loader = <div className="loader" key='loaderKey'>Loading ...</div>;
 
     const cards = [];
     this.state.cards.map((card, i) => {
@@ -72,7 +75,7 @@ class Board extends Component {
       <div className="background">
         <div className="barrier"> </div>
         <InfiniteScroll
-          id="board"
+          className="board"
           pageStart={0}
           loadMore={this.loadCards.bind(this)}
           hasMore={this.state.hasMoreCards}
