@@ -15,15 +15,12 @@ class Board extends Component {
     };
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    // if (nextProps) {
-      return {
-        // cards: [],
-        // hasMoreCards: true,
-        // pageNumber: 1
-      };
-    // }
-  };
+  componentDidUpdate(oldProps) {
+    const newProps = this.props
+    if(oldProps !== newProps) {
+      this.setState({ cards: [], pageNumber: 1 })
+    }
+  }
 
   loadCards() {
     const mtg = require('mtgsdk');
