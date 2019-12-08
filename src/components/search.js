@@ -19,18 +19,8 @@ class Search extends Component {
   }
 
   handleSubmit(event) {
-    this.loadCardsByName();
+    this.props.updateNameSearchCallback(this.state.value);
     event.preventDefault();
-  }
-
-  loadCardsByName = () => {
-    const mtg = require('mtgsdk')
-
-    // partial name match
-    mtg.card.where({name: this.state.value})
-    .then(cards => {
-        console.log(cards)
-    })
   }
 
   render() {

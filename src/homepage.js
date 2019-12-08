@@ -10,12 +10,17 @@ class Homepage extends Component {
     super(props);
 
     this.state = {
-      cardType: 'creature',
       nameSearch: '',
       page: 1,
-      cardsPerPage: 20,
       sortOrder: 'name'
     }
+  }
+
+  updateNameSearch = (newName) => {
+    this.setState({ 
+      name: newName,
+      page: 1
+    })
   }
   
   render () {
@@ -23,12 +28,10 @@ class Homepage extends Component {
       <div className="Homepage">
         <Nav />
         <Banner />
-        <Search />
+        <Search updateNameSearchCallback={this.updateNameSearch}/>
         <Board 
-          cardType={this.state.cardType}
           nameSearch={this.state.nameSearch}
           page={this.state.page}
-          cardsPerPage={this.state.cardsPerPage}
           sortOrder={this.state.sortOrder}
         />
       </div>
