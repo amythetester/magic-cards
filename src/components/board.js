@@ -46,7 +46,8 @@ class Board extends Component {
             hasMoreItems: false
           });
         }
-      });
+      })
+      .catch(alert("DID NOT WORK"))
   }
 
   render() {
