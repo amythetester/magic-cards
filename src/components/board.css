@@ -3,10 +3,10 @@
   background-position: center center;
 }
 
-.barrier {
+/* .barrier {
   background-color: #171008;
   min-height: 2rem;
-}
+} */
 
 .board {
   display: flex;
