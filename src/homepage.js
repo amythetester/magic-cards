@@ -11,17 +11,14 @@ class Homepage extends Component {
 
     this.state = {
       nameSearch: '',
-      page: 1,
       sortOrder: 'name'
     }
   }
 
   updateNameSearch = (newName) => {
     this.setState({ 
-      name: newName,
-      page: 1
+      nameSearch: newName,
     });
-    console.log('AMY nameSearch', this.state.nameSearch)
   }
   
   render () {
@@ -32,7 +29,6 @@ class Homepage extends Component {
         <Search updateNameSearchCallback={this.updateNameSearch}/>
         <Board 
           nameSearch={this.state.nameSearch}
-          page={this.state.page}
           sortOrder={this.state.sortOrder}
         />
       </div>
