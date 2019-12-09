@@ -50,7 +50,7 @@ class Board extends Component {
           });
         }
       })
-      .catch(function(error) {
+      .catch(error => {
         console.error(error);
       });
   }
