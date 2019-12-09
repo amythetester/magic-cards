@@ -6,6 +6,8 @@ import Nav from './components/nav.js';
 import Search from './components/search.js';
 import Sort from './components/sort.js';
 
+import './homepage.css'
+
 class Homepage extends Component {
   constructor(props) {
     super(props);
@@ -30,11 +32,13 @@ class Homepage extends Component {
   
   render () {
     return (
-      <div className="Homepage">
+      <div id="homepage">
         <Nav />
         <Banner />
-        <Search updateNameSearchCallback={this.updateNameSearch}/>
-        <Sort updateSortOrderCallback={this.updateSortOrder} />
+        <div id="search-sort">
+          <Search updateNameSearchCallback={this.updateNameSearch}/>
+          <Sort updateSortOrderCallback={this.updateSortOrder} />
+        </div>
         <Board
           nameSearch={this.state.nameSearch}
           sortOrder={this.state.sortOrder}

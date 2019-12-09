@@ -1,15 +1,10 @@
-.search {
+.sort {
     display: flex;
     justify-content: center;
     padding: 2rem;
 }
 
-#search-button {
-    margin-left: 1rem;
-}
-
-#search-input {
-    border-radius: 5%;
+#sort-select {
     margin-left: 1rem;
 }
 
