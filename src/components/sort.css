@@ -1,9 +1,13 @@
-.search {
+.sort {
     display: flex;
     justify-content: center;
     margin: 2rem;
 }
 
-#search-button {
+#sort-select {
     margin-left: 1rem;
+}
+
+.label {
+    color: white;
 }

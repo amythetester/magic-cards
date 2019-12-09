@@ -6,6 +6,8 @@ import Nav from './components/nav.js';
 import Search from './components/search.js';
 import Sort from './components/sort.js';
 
+import './homepage.css'
+
 class Homepage extends Component {
   constructor(props) {
     super(props);

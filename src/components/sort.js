@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './search.css'
+import './sort.css'
 
 class Sort extends Component {
   constructor(props) {
@@ -20,17 +20,15 @@ class Sort extends Component {
 
   render() {
     return (
-      <form>
-        <label>
-          <select name="sort" id="sort-select" label="Sort" onChange={this.handleChange} defaultValue='name'>
-            <option value="artist">Artist</option>
-            <option value="name">Creature Name</option>
-            <option value="originalType">Original Type</option>
-            <option value="setName">Set Name</option>
-          </select>
-        Sort
-        </label>
-      </form>
+      <div className="sort">
+        <h5 className="label">Sort By:</h5>
+        <select name="sort" id="sort-select" className="btn btn-outline-light btn-lg" label="Sort" onChange={this.handleChange} defaultValue='name'>
+          <option value="artist">Artist</option>
+          <option value="name">Creature Name</option>
+          <option value="originalType">Original Type</option>
+          <option value="setName">Set Name</option>
+        </select>
+      </div>
     );
   }
 }
