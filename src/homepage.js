@@ -35,8 +35,10 @@ class Homepage extends Component {
       <div id="homepage">
         <Nav />
         <Banner />
-        <Search updateNameSearchCallback={this.updateNameSearch}/>
-        <Sort updateSortOrderCallback={this.updateSortOrder} />
+        <div id="search-sort">
+          <Search updateNameSearchCallback={this.updateNameSearch}/>
+          <Sort updateSortOrderCallback={this.updateSortOrder} />
+        </div>
         <Board
           nameSearch={this.state.nameSearch}
           sortOrder={this.state.sortOrder}
