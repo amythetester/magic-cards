@@ -4,11 +4,7 @@
 
   height: 500px;
   width: 250px;
-
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  align-items: center;
-  }
+}
 
 .card:hover {
   filter: drop-shadow(0 0 2rem lightyellow);
