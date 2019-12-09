@@ -7,3 +7,12 @@
 #search-button {
     margin-left: 1rem;
 }
+
+#search-input {
+    border-radius: 5%;
+    margin-left: 1rem;
+}
+
+.label {
+    color: white;
+}

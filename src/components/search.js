@@ -25,10 +25,11 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
-        <form className="search" onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="Search by card name..." value={this.state.value} onChange={this.handleChange} />
-            <button id="search-button" className="btn btn-outline-light btn-lg">Search</button>
+      <div className="search">
+        <h5 className="label">Search By Name:</h5>
+        <form onSubmit={this.handleSubmit}>
+            <input id="search-input" type="text" placeholder="Card name..." value={this.state.value} onChange={this.handleChange} />
+            <button id="search-button" className="btn btn-light">Search</button>
         </form>
       </div>
     );

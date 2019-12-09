@@ -22,7 +22,7 @@ class Sort extends Component {
     return (
       <div className="sort">
         <h5 className="label">Sort By:</h5>
-        <select name="sort" id="sort-select" className="btn btn-outline-light btn-lg" label="Sort" onChange={this.handleChange} defaultValue='name'>
+        <select name="sort" id="sort-select" className="btn btn-light btn-lg" label="Sort" onChange={this.handleChange} defaultValue='name'>
           <option value="artist">Artist</option>
           <option value="name">Creature Name</option>
           <option value="originalType">Original Type</option>

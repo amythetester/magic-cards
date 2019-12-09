@@ -1,4 +1,5 @@
 .hero {
+    /* Image from https://pixabay.com/photos/fantasy-light-mood-sky-beautiful-2861107/ */
     background-image: url('../images/sun-creature.jpg');
     background-position: center center;
     background-size: cover;
