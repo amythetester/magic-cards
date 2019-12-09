@@ -23,3 +23,9 @@
   border-radius: 0.25rem;
   max-height: 75px;
 }
+
+@media screen and (max-width: 830px) {
+  .board {
+    padding: 0 2rem 0 2rem;
+  }
+}

@@ -12,8 +12,6 @@
 }
   
 .card__content {
-  grid-column-start: 2;
-
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -26,6 +24,16 @@
 .card__content-image {
   height: 300px;
   width: 210px;
+  
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 830px) {
+  .card {
+    padding: 0.5rem;
+    margin: 0.5rem;
+  }
 }
 
 .cardFadeIn {
