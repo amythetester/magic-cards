@@ -37,7 +37,7 @@ class Board extends Component {
       page: this.state.pageNumber
     })
       .then(cards => {
-        if(cards) {
+        if(cards.length > 0) {
           const currentCards = this.state.cards;
           cards.forEach((card) => {
             currentCards.push(card);
@@ -48,7 +48,7 @@ class Board extends Component {
           });
         } else {
           this.setState({
-            hasMoreItems: false
+            hasMoreCards: false
           });
         }
       })
@@ -58,8 +58,6 @@ class Board extends Component {
   }
 
   render() {
-    const loader = <h3 className="loader" key='loaderKey'>Loading ...</h3>;
-
     const cards = [];
     this.state.cards.forEach((card, i) => {
       cards.push(
@@ -82,7 +80,7 @@ class Board extends Component {
           pageStart={0}
           loadMore={this.loadCards.bind(this)}
           hasMore={this.state.hasMoreCards}
-          loader={loader}>
+          loader={<h3 className="loader" key='loaderKey'>Loading ...</h3>}>
 
           {cards}
 
