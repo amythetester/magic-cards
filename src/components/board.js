@@ -60,11 +60,18 @@ class Board extends Component {
   render() {
     const cards = [];
     this.state.cards.forEach((card, i) => {
+      let cardImage = ''
+      if (card.imageUrl) {
+        cardImage = card.imageUrl
+      } else {
+        cardImage = "https://img.icons8.com/ios/100/000000/image-not-avialable.png"
+      }
+
       cards.push(
         <Card 
           key={i}
           name={card.name} 
-          image={card.imageUrl}
+          image={cardImage}
           artist={card.artist}
           set={card.setName}
           type={card.originalType}
