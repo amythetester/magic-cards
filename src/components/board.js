@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import Card from './card.js';
 
 import './board.css'
+
 class Board extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +19,7 @@ class Board extends Component {
 
   componentDidUpdate(oldProps) {
     const newProps = this.props
-    if(oldProps !== newProps) {
+    if(oldProps.nameSearch !== newProps.nameSearch || oldProps.sortOrder !==newProps.sortOrder) {
       this.setState({ cards: [], pageNumber: 1 })
     }
   }
@@ -35,7 +37,7 @@ class Board extends Component {
       page: this.state.pageNumber
     })
       .then(cards => {
-        if(cards) {
+        if(cards.length > 0) {
           const currentCards = this.state.cards;
           cards.forEach((card) => {
             currentCards.push(card);
@@ -46,25 +48,30 @@ class Board extends Component {
           });
         } else {
           this.setState({
-            hasMoreItems: false
+            hasMoreCards: false
           });
         }
       })
-      .catch(function(error) {
+      .catch(error => {
         console.error(error);
       });
   }
 
   render() {
-    const loader = <h3 className="loader" key='loaderKey'>Loading ...</h3>;
-
     const cards = [];
     this.state.cards.forEach((card, i) => {
+      let cardImage = ''
+      if (card.imageUrl) {
+        cardImage = card.imageUrl
+      } else {
+        cardImage = "https://img.icons8.com/ios/100/000000/image-not-avialable.png"
+      }
+
       cards.push(
         <Card 
           key={i}
           name={card.name} 
-          image={card.imageUrl}
+          image={cardImage}
           artist={card.artist}
           set={card.setName}
           type={card.originalType}
@@ -80,7 +87,7 @@ class Board extends Component {
           pageStart={0}
           loadMore={this.loadCards.bind(this)}
           hasMore={this.state.hasMoreCards}
-          loader={loader}>
+          loader={<h3 className="loader" key='loaderKey'>Loading ...</h3>}>
 
           {cards}
 
@@ -89,5 +96,10 @@ class Board extends Component {
     );
   }
 }
+
+Board.propTypes = {
+  nameSearch: PropTypes.string,
+  sortOrder: PropTypes.string
+};
 
 export default Board;

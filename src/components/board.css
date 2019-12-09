@@ -11,6 +11,8 @@
   background-image: url('../images/forest-creature.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   padding-top: 2rem;
 }
 
