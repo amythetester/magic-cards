@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import Banner from './components/banner.js'
 import Board from './components/board.js';
 import Nav from './components/nav.js';
-import Search from './components/search.js'
+import Search from './components/search.js';
+import Sort from './components/sort.js';
 
 class Homepage extends Component {
   constructor(props) {
@@ -17,16 +18,24 @@ class Homepage extends Component {
 
   updateNameSearch = (newName) => {
     this.setState({ 
-      nameSearch: newName,
+      nameSearch: newName
+    });
+  }
+
+  updateSortOrder = (sortBy) => {
+    this.setState({
+      sortOrder: sortBy
     });
   }
   
   render () {
+    console.log('amy sortOrder homepage', this.state.sortOrder)
     return (
       <div className="Homepage">
         <Nav />
         <Banner />
         <Search updateNameSearchCallback={this.updateNameSearch}/>
+        <Sort updateSortOrderCallback={this.updateSortOrder} />
         <Board
           nameSearch={this.state.nameSearch}
           sortOrder={this.state.sortOrder}
