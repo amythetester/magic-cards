@@ -56,7 +56,7 @@ class Board extends Component {
   }
 
   render() {
-    const loader = <div className="loader" key='loaderKey'>Loading ...</div>;
+    const loader = <h3 className="loader" key='loaderKey'>Loading ...</h3>;
 
     const cards = [];
     this.state.cards.forEach((card, i) => {

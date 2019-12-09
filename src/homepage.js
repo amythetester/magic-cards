@@ -27,7 +27,7 @@ class Homepage extends Component {
         <Nav />
         <Banner />
         <Search updateNameSearchCallback={this.updateNameSearch}/>
-        <Board 
+        <Board
           nameSearch={this.state.nameSearch}
           sortOrder={this.state.sortOrder}
         />

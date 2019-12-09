@@ -1,16 +1,21 @@
-.background {
-  background-image: url('../images/forest-creature.jpg');
-  background-position: center center;
-}
-
-/* .barrier {
-  background-color: #171008;
-  min-height: 2rem;
-} */
-
 .board {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0 5rem 0 5rem;
+  min-height: 400px;
+}
+
+.background {
+  background-image: url('../images/forest-creature.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.loader {
+  color: white;
+  padding: 1rem;
+  background:rgba(0,0,0,0.5);
+  border-radius: 0.25rem;
+  max-height: 75px;
 }

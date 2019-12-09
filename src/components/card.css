@@ -11,7 +11,7 @@
   }
 
 .card:hover {
-  filter: drop-shadow(0 0 1rem lightyellow);
+  filter: drop-shadow(0 0 2rem lightyellow);
   box-shadow: 0 2px 2px black;
 }
   
@@ -25,6 +25,11 @@
   text-align: center;
   font-weight: 100;
   overflow: hidden;
+}
+
+.card__content-image {
+  height: 300px;
+  width: 210px;
 }
 
 .cardFadeIn {
