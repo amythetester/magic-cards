@@ -29,7 +29,6 @@ class Homepage extends Component {
   }
   
   render () {
-    console.log('amy sortOrder homepage', this.state.sortOrder)
     return (
       <div className="Homepage">
         <Nav />

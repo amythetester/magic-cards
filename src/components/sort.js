@@ -14,13 +14,11 @@ class Sort extends Component {
   }
 
   handleChange(event) {
-    console.log('amy event', event.target.value)
     this.setState({sortOrder: event.target.value});
-    this.props.updateSortOrderCallback(this.state.sortOrder);
+    this.props.updateSortOrderCallback(event.target.value);
   }
 
   render() {
-    console.log('amy sortOrder sort', this.state.sortOrder)
     return (
       <form>
         <label>
