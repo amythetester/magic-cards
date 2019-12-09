@@ -4,6 +4,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import Card from './card.js';
 
 import './board.css'
+
 class Board extends Component {
   constructor(props) {
     super(props);
