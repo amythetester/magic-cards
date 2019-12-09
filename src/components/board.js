@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import InfiniteScroll from 'react-infinite-scroller';
 
 import Card from './card.js';
@@ -18,7 +19,7 @@ class Board extends Component {
 
   componentDidUpdate(oldProps) {
     const newProps = this.props
-    if(oldProps !== newProps) {
+    if(oldProps.nameSearch !== newProps.nameSearch || oldProps.sortOrder !==newProps.sortOrder) {
       this.setState({ cards: [], pageNumber: 1 })
     }
   }
@@ -90,5 +91,10 @@ class Board extends Component {
     );
   }
 }
+
+Board.propTypes = {
+  nameSearch: PropTypes.string,
+  sortOrder: PropTypes.string
+};
 
 export default Board;

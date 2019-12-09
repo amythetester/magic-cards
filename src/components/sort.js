@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './sort.css'
 
@@ -32,5 +33,9 @@ class Sort extends Component {
     );
   }
 }
+
+Sort.propTypes = {
+  undateSortOrderCallback: PropTypes.func,
+};
 
 export default Sort;

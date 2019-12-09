@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './search.css'
 
@@ -35,5 +36,9 @@ class Search extends Component {
     );
   }
 }
+
+Search.propTypes = {
+  undateNameSearchCallback: PropTypes.func,
+};
 
 export default Search;
