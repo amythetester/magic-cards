@@ -25,7 +25,8 @@ class Sort extends Component {
           <select name="sort" id="sort-select" label="Sort" onChange={this.handleChange} defaultValue='name'>
             <option value="artist">Artist</option>
             <option value="name">Creature Name</option>
-            <option value="set">Set Name</option>
+            <option value="originalType">Original Type</option>
+            <option value="setName">Set Name</option>
           </select>
         Sort
         </label>
