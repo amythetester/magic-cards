@@ -1,9 +1,7 @@
 .sort {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 #sort-select {
@@ -12,4 +10,11 @@
 
 .label {
     color: white;
+}
+
+#sort-collapse {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-left: 9.5rem;
+    padding-right: 9.5rem;
 }

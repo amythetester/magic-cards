@@ -1,9 +1,7 @@
 .search {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 #search-button {
@@ -19,8 +17,21 @@
     color: white;
 }
 
+@media screen and (max-width: 830px) {
+    #search-button {
+      margin-top: 0.5rem;
+    }
+}
+
 .last-search {
     font-style: italic;
     color: white;
     margin-top: 1rem;
+}
+
+#search-collapse {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
 }
