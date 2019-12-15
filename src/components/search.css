@@ -24,3 +24,9 @@
     color: white;
     margin-top: 1rem;
 }
+
+#search-collapse {
+    margin-bottom: 1rem;
+    padding-left: 9rem;
+    padding-right: 9rem;
+}

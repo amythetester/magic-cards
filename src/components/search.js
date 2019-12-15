@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Collapse} from 'react-collapse';
 import PropTypes from 'prop-types';
 
 import './search.css'
@@ -8,12 +9,17 @@ class Search extends Component {
     super(props);
 
     this.state = {
-      value: '',
-      mostRecent: 'Search not being used'
+      isOpened: false,
+      mostRecent: 'Search not being used',
+      value: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  isOpen = () => {
+    this.setState({ isOpened: !this.state.isOpened})
   }
 
   handleChange(event) {
@@ -34,12 +40,15 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
-        <h5 className="label">Search By Name:</h5>
-        <form onSubmit={this.handleSubmit}>
-            <input id="search-input" type="text" placeholder="Card name..." value={this.state.value} onChange={this.handleChange} />
-            <button id="search-button" className="btn btn-light">Search</button>
-        </form>
-        <h5 className="last-search">Current Search: {this.state.mostRecent}</h5>
+        <button className="btn btn-info btn-lg" id="search-collapse" onClick={this.isOpen}>Search</button>
+        <Collapse isOpened={this.state.isOpened}>
+          <h5 className="label">Search By Name:</h5>
+          <form onSubmit={this.handleSubmit}>
+              <input id="search-input" type="text" placeholder="Card name..." value={this.state.value} onChange={this.handleChange} />
+              <button id="search-button" className="btn btn-light">Search</button>
+          </form>
+          <h5 className="last-search">Current Search: {this.state.mostRecent}</h5>
+        </Collapse>
       </div>
     );
   }
