@@ -12,6 +12,7 @@ This app displays Magic the Gathering creature cards. Users are also able to sea
 - Bootstrap: used for styling elements
 - [MTGSDK](https://github.com/MagicTheGathering/mtg-sdk-javascript) (Magic the Gathering SDK): used to call the MTG API
 - [React Infinite Scroler](https://www.npmjs.com/package/react-infinite-scroller): used to call API and render additional cards when user scrolls to bottom of the screen
+- [React Collapse](https://www.npmjs.com/package/react-collapse): used to expand and collapse the search and sort features on version-2 branch.
 - React Router: used to route 'pages'. This was added to the project so future work and more 'pages' could be added.
 
 ## How to install and run
