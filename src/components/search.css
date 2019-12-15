@@ -1,9 +1,8 @@
 .search {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 2rem;
+    justify-content: center;
+    padding: 1rem;
 }
 
 #search-button {
@@ -33,6 +32,7 @@
 
 #search-collapse {
     margin-bottom: 1rem;
+    margin-top: 1rem;
     padding-left: 9rem;
     padding-right: 9rem;
 }

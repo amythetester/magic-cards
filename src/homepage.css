@@ -1,7 +1,6 @@
 #search-sort {
     background-color: #343A40;
-}
-
-#homepage {
-    background-color: #370a1f;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

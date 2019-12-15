@@ -18,12 +18,12 @@ class Search extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  isOpen = () => {
-    this.setState({ isOpened: !this.state.isOpened})
-  }
-
   handleChange(event) {
     this.setState({value: event.target.value});
+  }
+  
+  isOpen = () => {
+    this.setState({ isOpened: !this.state.isOpened})
   }
 
   handleSubmit(event) {
