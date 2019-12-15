@@ -1,6 +1,8 @@
 .search {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 2rem;
 }
 
@@ -15,4 +17,10 @@
 
 .label {
     color: white;
+}
+
+.last-search {
+    font-style: italic;
+    color: white;
+    margin-top: 1rem;
 }

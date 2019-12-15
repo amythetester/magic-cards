@@ -39,7 +39,7 @@ class Search extends Component {
             <input id="search-input" type="text" placeholder="Card name..." value={this.state.value} onChange={this.handleChange} />
             <button id="search-button" className="btn btn-light">Search</button>
         </form>
-        <h5 className="label">Current Search: {this.state.mostRecent}</h5>
+        <h5 className="last-search">Current Search: {this.state.mostRecent}</h5>
       </div>
     );
   }
