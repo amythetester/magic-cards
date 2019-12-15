@@ -8,7 +8,8 @@ class Search extends Component {
     super(props);
 
     this.state = {
-      value: ''
+      value: '',
+      mostRecent: 'Search not being used'
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,6 +23,12 @@ class Search extends Component {
   handleSubmit(event) {
     this.props.updateNameSearchCallback(this.state.value);
     event.preventDefault();
+
+    if (this.state.value === '') {
+      this.setState({ mostRecent: 'Search not being used' });
+    } else {
+      this.setState({ mostRecent: this.state.value });
+    }
   }
 
   render() {
@@ -32,6 +39,7 @@ class Search extends Component {
             <input id="search-input" type="text" placeholder="Card name..." value={this.state.value} onChange={this.handleChange} />
             <button id="search-button" className="btn btn-light">Search</button>
         </form>
+        <h5 className="label">Current Search: {this.state.mostRecent}</h5>
       </div>
     );
   }
