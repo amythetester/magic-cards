@@ -3,6 +3,9 @@
 ## Overview
 This app displays Magic the Gathering creature cards. Users are also able to search and sort the content to find the card(s) they are looking for.
 
+## Deployed App
+[This app](https://version-2.d1zgtpa0mw5cra.amplifyapp.com/) is deployed to an S3 bucket via AWS Amplify. Knows bugs listed below.
+
 ## Tech Stack
 - Frontend: React.js, CSS, and HTML
 - Backend: Magic The Gathering API
