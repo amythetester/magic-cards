@@ -13,24 +13,13 @@ class Search extends Component {
       mostRecent: 'Search not being used',
       value: ''
     };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  isOpen = () => {
-    this.setState({ isOpened: !this.state.isOpened})
-  }
-
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({value: event.target.value});
   }
   
-  isOpen = () => {
-    this.setState({ isOpened: !this.state.isOpened})
-  }
-
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     this.props.updateNameSearchCallback(this.state.value);
     event.preventDefault();
 
@@ -39,6 +28,10 @@ class Search extends Component {
     } else {
       this.setState({ mostRecent: this.state.value });
     }
+  }
+
+  isOpen = () => {
+    this.setState({ isOpened: !this.state.isOpened})
   }
 
   render() {

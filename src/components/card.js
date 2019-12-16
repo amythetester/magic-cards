@@ -1,20 +1,39 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import './card.css'
 
-function Card(props) {
-  return (
-    <div className="card cardFadeIn">
-      <section className="card__content">
-        {props.image && <img src={props.image} alt="creature card" className="card__content-image"/>}
-        {props.name && <div className="card__content-name">Name: {props.name}</div>}
-        {props.artist && <div className="card__content-artist">Artist: {props.artist}</div>}
-        {props.set && <div className="card__content-set">Set: {props.set}</div>}
-        {props.type && <div className="card__content-type">Original Type: {props.type}</div>}
-      </section>
-    </div>
-  );
+
+class Card extends Component {
+  constructor(props) {
+    super(props);
+      this.state = {
+      isFlipped: false
+    };
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
+  }
+  
+  render() {
+    return (
+      <div className="cardContainer cardFadeIn" onClick={this.handleClick}>
+        <section className={`card ${this.state.isFlipped ? 'is-flipped' : ''}`}>
+          <div className="card__face card__face--front">
+            {this.props.image && <img src={this.props.image} alt="creature card" className="card-image"/>}
+            {this.props.name && <div className="card-text">Name: {this.props.name}</div>}
+          </div>
+          <div className="card__face card__face--back">
+            {this.props.artist && <div className="card-text">Artist: {this.props.artist}</div>}
+            {this.props.set && <div className="card-text">Set: {this.props.set}</div>}
+            {this.props.type && <div className="card-text">Original Type: {this.props.type}</div>}
+          </div>
+        </section>
+      </div>
+    );
+  }
 }
 
 Card.propTypes = {
