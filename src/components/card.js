@@ -26,6 +26,7 @@ class Card extends Component {
             {this.props.name && <div className="card-text">Name: {this.props.name}</div>}
           </div>
           <div className="card__face card__face--back">
+            {this.props.name && <div className="card-text">Name: {this.props.name}</div>}
             {this.props.artist && <div className="card-text">Artist: {this.props.artist}</div>}
             {this.props.set && <div className="card-text">Set: {this.props.set}</div>}
             {this.props.type && <div className="card-text">Original Type: {this.props.type}</div>}

@@ -36,6 +36,7 @@ class Sort extends Component {
             <option value="setName">Set Name</option>
           </select>
         </Collapse>
+        <h5 className="last-sort">Current Sort: {this.state.sortOrder}</h5>
       </div>
     );
   }

@@ -12,6 +12,12 @@
     color: white;
 }
 
+.last-sort {
+    font-style: italic;
+    color: white;
+    margin-top: 0.5rem;
+}
+
 #sort-collapse {
     margin-bottom: 1rem;
     margin-top: 1rem;
