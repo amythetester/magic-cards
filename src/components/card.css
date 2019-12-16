@@ -31,16 +31,19 @@
 .card__face--front {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
 }
 
 .card__face--back {
+  margin: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   transform: rotateY(180deg);
+}
+
+#card-text {
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-image {

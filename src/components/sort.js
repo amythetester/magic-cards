@@ -12,11 +12,9 @@ class Sort extends Component {
       isOpened: false,
       sortOrder: 'name'
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
+  handleChange = (event) => {
     this.setState({sortOrder: event.target.value});
     this.props.updateSortOrderCallback(event.target.value);
   }
