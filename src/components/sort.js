@@ -10,6 +10,7 @@ class Sort extends Component {
 
     this.state = {
       isOpened: false,
+      mostRecent: 'name',
       sortOrder: 'name'
     };
   }
@@ -17,6 +18,8 @@ class Sort extends Component {
   handleChange = (event) => {
     this.setState({sortOrder: event.target.value});
     this.props.updateSortOrderCallback(event.target.value);
+
+    this.setState({ mostRecent: this.state.sortOrder });
   }
 
   isOpen = () => {
@@ -36,6 +39,7 @@ class Sort extends Component {
             <option value="setName">Set Name</option>
           </select>
         </Collapse>
+        <h5 className="last-sort">Current Sort: {this.state.mostRecent}</h5>
       </div>
     );
   }

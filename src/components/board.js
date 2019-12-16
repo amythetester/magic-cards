@@ -20,7 +20,7 @@ class Board extends Component {
   componentDidUpdate(oldProps) {
     const newProps = this.props
     if(oldProps.nameSearch !== newProps.nameSearch || oldProps.sortOrder !==newProps.sortOrder) {
-      this.setState({ cards: [], pageNumber: 1 })
+      this.setState({ cards: [], hasMoreCards: true, pageNumber: 1 })
     }
   }
 
